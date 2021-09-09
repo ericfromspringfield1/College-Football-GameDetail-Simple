@@ -8,6 +8,7 @@
   #gameInfoContainer > div {
     background-color: #f1f1f1;
     text-align: center;
+    padding: 10px;
     line-height: 35px;
     font-size: 25px;
     
@@ -21,13 +22,17 @@
     font-family: 'Quantico', sans-serif;
   }
 
+  #venue img {
+    padding: 10px;
+  }
+
   #touchdown {
     font-family: 'Quantico', sans-serif;
   }
 
   #winner {
     font-family: 'Quantico', sans-serif;
-    background-color: white;
+    background-color: white;    
   }
 
   #venuePhoto {
@@ -57,7 +62,14 @@
   #gameStatus {
     font-family: 'Quantico', sans-serif;
     margin-top: 2px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+  }
+
+  #scoreContainer {
+     background-imaage: url('./images/espn-logo.png');
+     border: 5pt dotted rgba(0, 0, 0, 0.788); 
+     margin: 5px;
+
   }
 
   #awayTeam {
@@ -69,7 +81,6 @@
   #homeTeam {
     font-family: 'Quantico', sans-serif;
     padding: 3px;
-    margin-bottom: 3px;
 
   }
 
@@ -103,7 +114,7 @@
   #awayStatsContainer {
     font-family: 'Quantico', sans-serif;
     margin: 5px;
-    flex-grow: 1
+    flex-grow: 1;
  
   }
 
@@ -113,6 +124,21 @@
     padding: 5px;
     color: rgb(43, 41, 41);
     margin: 5px;
+  }
+
+  #awayPassingStats {
+      margin-left: 1px;
+      margin-right: 1px;
+  }
+
+  #awayRushingStats {
+      margin-left: 1px;
+      margin-right: 1px;
+  }
+
+  #awayReceivingStats {
+      margin-left: 1px;
+      margin-right: 1px;
   }
 
 
