@@ -1,4 +1,4 @@
-const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401282614`
+const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401309552`
     
    const displayData = async () => {
         const jsonData = await fetch (gameUrl)
@@ -236,6 +236,7 @@ const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-f
         
         // scoring and other events (TD, FG, Penalties, etc) //
         // touchdown // 
+
         if (data?.header?.competitions[0]?.status?.type?.completed === false && data?.header?.competitions[0]?.status?.type?.description !== "Scheduled") {
         if (data?.drives?.current?.result === "TD")  {
             venuePhoto.style.display = 'none'
@@ -244,6 +245,7 @@ const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-f
             touchdown.innerHTML =  `TOUCHDOWN <br> <img src="${driveTeam}" width="250" height="250">`
          }  
         }
+    
         
          // slow fade/flash background behind touchdown message //   
             var ofs = 0;
@@ -306,7 +308,7 @@ if (data?.header?.competitions[0]?.status?.type?.completed === false && data?.he
 const thePlays = data.scoringPlays.map((play) => {
     
     return `
-    <div id="scoringPlays" align="left"><img src="${play?.team?.logo} width="40" height="40" align="center"> ${play?.text} | QTR${play?.period?.number} | ${play?.clock?.displayValue} | <img src="${awayDarkLogo}"width="40" height="40" align="center">  ${play?.awayScore} - ${play?.homeScore}  <img src="${homeDarkLogo}"width="40" height="40" align="center"></div>
+    <div id="scoringPlays" align="left"><img src="${play?.team?.logo}"width="40" height="40" align="center"> ${play?.text} | QTR${play?.period?.number} | ${play?.clock?.displayValue} | <img src="${awayDarkLogo}"width="40" height="40" align="center">  ${play?.awayScore} - ${play?.homeScore}  <img src="${homeDarkLogo}"width="40" height="40" align="center"></div>
     `
 })
 
@@ -522,7 +524,7 @@ if (data.header.competitions[0].status.type.completed === true && data.header.co
         venuePhoto.style.display = 'none'
         var ofs2 = 0;
         var el2 = document.getElementById('winner');
-        venue.innerHTML =  `FINAL <hr><img src="${awayDarkLogo}" width='75' height='75' align='center'>${awayScoreInt} - ${homeScoreInt} <img src='${homeDarkLogo}' width='40' height='40' align='center'>`
+        venue.innerHTML =  `FINAL <hr><img src="${awayDarkLogo}" width='75' height='75' align='center'>${awayScoreInt} - ${homeScoreInt} <img src='${homeDarkLogo}' width='75' height='75' align='center'>`
 
      
          window.setInterval(function(){
