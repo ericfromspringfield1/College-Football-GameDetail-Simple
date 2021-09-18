@@ -1,4 +1,4 @@
-const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401309552`
+const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401282071`
     
    const displayData = async () => {
         const jsonData = await fetch (gameUrl)
@@ -55,6 +55,11 @@ const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-f
     let weatherTempLow = data?.gameInfo?.weather?.lowTemperature
       
     switch (true)  {
+        case (data?.header?.competitions[0]?.status?.type?.state === "pre"):
+        weather = document.getElementById('weather')
+        weather.innerHTML = `${weatherTemp}&#176 ` 
+        weather.style.color = `#${homeTeamColor}`
+        break;
 
         case (data?.header?.competitions[0]?.status?.type?.description === "Scheduled" && weatherPrecip >= 0 && weatherPrecip < 20):
         weather = document.getElementById('weather')
@@ -80,6 +85,11 @@ const gameUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-f
         weather.style.color = `#${homeTeamColor}`
         break;
 
+        default:
+            break;
+    }
+
+        switch (true)  {
             case (weatherPrecip >= 0 && weatherPrecip < 20):
                 weather = document.getElementById('weather')
                 weather.innerHTML = `${weatherTemp}&#176  &#x1F324`
