@@ -4,30 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta http-equiv="refresh" content="25"/> -->
-    <title>College Football Gameplay</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>College Football Game Follow</title>
+    <link rel="stylesheet" href="./styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet"></head>
     <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet"></head>
-    <body>
-        <div id="gameInfoContainer">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@300&family=Montserrat:wght@600&family=Rampart+One&family=Rubik+Dirt&family=Rubik+Maze&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">       
+        
+    <section id="eventsContainer">
+        <div id="gameTime"></div>
+        <div id="awayTeamScore"></div>
+        <div id="homeTeamScore"></div>
+        <button id="btn"></button>
+    </section>
+
+    <div id="gameInfoContainer">
             <div id='weather'></div>
             <div id='venue'></div>
-            <div id='touchdown' style="display: none;"></div>
+            <div id='touchdown'></div>
             <div id='winner'></div>
-            <div id='venuePhoto'></div>
+
+            <div id="currentPlayContainer">
+                <div id="theDownDistanceIs"></div>
+                <div id="currentPlay"></div>
+            </div>
+
+            <div id='venuePhotoContainer'>
+                <div id="awayPre"></div>
+                <div id="homePre"></div>
+            </div>
+            
+            <!-- <div id='venuePhoto'></div> -->
             <div id='gameDescription'></div>
             <div id='gameStatus'></div>
 
+
         <div id="scoreContainer">
             <div id='awayTeam'></div> 
+            <div id='awayPredictor'></div>
             <div id='homeTeam'></div>
-        </div>
-
-            <div id="currentPlayContainer">
-            <div id="theDownDistanceIs"></div>
-            <div id="currentPlay"></div>
+            <div id="homePredictor"></div>
         </div>
 
         <div id=statsContainer>
@@ -48,14 +66,17 @@
             <div id="awayRushingStats"></div>
             <div id="awayReceivingLeader"></div>
             <div id="awayReceivingStats"></div>
+            <div id="theAwayReceivingLeader"></div>
         </div>
             
         <div id="scoringPlaysContainer">
             <div id="scoringPlays"></div>
         </div>
-        </div>
-            
+    </div>
     
-<script src="plays.js"></script> 
-</body>
+        <script src="/scripts/plays.js"></script>
+    <body>
 </html>
+
+
+
